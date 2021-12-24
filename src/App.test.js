@@ -16,14 +16,14 @@ describe("<App />", () => {
           //Only accepts number as input
           userEvent.type(screen.getByTestId("number"),"not a number")
   
-          //Only accepts number as input
-          userEvent.type(screen.getByTestId("cvv"),"ab@!")                  
+          //Max 4 digits
+          userEvent.type(screen.getByTestId("cvv"),"12345")                  
           
         });
     
         it("then validates the content", () => {
           expect(screen.getByPlaceholderText(/Please enter your credit card number/i)).toHaveDisplayValue("");
-          expect(screen.getByTestId("Cardcvv")).toHaveTextContent("")
+          expect(screen.getByTestId("Cardcvv")).toHaveTextContent("1234")
           expect(screen.getByDisplayValue('James Potter')).toBeInTheDocument;        
           
         });
