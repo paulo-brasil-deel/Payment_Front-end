@@ -170,7 +170,7 @@ const CardForm = (props) => {
           <input
             data-testid="cvv"
             required
-            type="text"
+            type="number"
             maxLength="4"
             className="cvv-input"
             value={cvv}

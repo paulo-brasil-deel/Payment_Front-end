@@ -16,14 +16,14 @@ describe("<App />", () => {
           //Only accepts number as input
           userEvent.type(screen.getByTestId("number"),"not a number")
   
-          //Can't have more then 4 digets
-          userEvent.type(screen.getByTestId("cvv"),"12345")                  
+          //Only accepts number as input
+          userEvent.type(screen.getByTestId("cvv"),"ab@!")                  
           
         });
     
         it("then validates the content", () => {
           expect(screen.getByPlaceholderText(/Please enter your credit card number/i)).toHaveDisplayValue("");
-          expect(screen.getByTestId("Cardcvv")).toHaveTextContent("1234")
+          expect(screen.getByTestId("Cardcvv")).toHaveTextContent("")
           expect(screen.getByDisplayValue('James Potter')).toBeInTheDocument;        
           
         });
@@ -34,7 +34,7 @@ describe("<App />", () => {
         beforeEach(() => {
           userEvent.type(screen.getByTestId("holder"),"James Potter")
           userEvent.type(screen.getByTestId("number"),"1111111111")
-          userEvent.type(screen.getByTestId("cvv"),"1234")        
+          userEvent.type(screen.getByTestId("cvv"),"12345")        
           
         });
   

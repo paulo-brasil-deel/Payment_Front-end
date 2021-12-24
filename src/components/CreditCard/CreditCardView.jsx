@@ -12,6 +12,11 @@ const CreditCardView = (props) => {
     cardTypeUrl,
   } = UseCardInfo();
 
+
+  function formatCvv(cvv){
+    return cvv.substring(0, 4).trim()
+  }
+
   return (
     <div className="card-container">
       <div className="flip-card-inner" ref={Ref}>
@@ -49,7 +54,7 @@ const CreditCardView = (props) => {
           <div className="stripe" />
           <div className="box ">
             <span>cvv</span>
-            <div data-testid="Cardcvv" className="cvv-box">{cvv}</div>
+            <div data-testid="Cardcvv" className="cvv-box">{formatCvv(cvv)}</div>
             <img src={cardTypeUrl} alt="" />
           </div>
         </div>
