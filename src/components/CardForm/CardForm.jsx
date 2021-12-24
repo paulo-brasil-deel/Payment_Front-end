@@ -101,11 +101,13 @@ const CardForm = (props) => {
           }}
           onChange={handleCardNumChange}
           placeholder="Please enter your credit card number"
+          data-testid="number"
         />
       </div>
       <div className="inputBox" onClick={flipFront}>
         <span>Card Holder</span>
         <input
+          data-testid="holder"
           required
           onChange={handleOnChange}
           type="text"
@@ -119,7 +121,6 @@ const CardForm = (props) => {
           <select
             required
             name="Month"
-            id=""
             className="month-input"
             value={expireMonth}
             onChange={handleExpMonth}
@@ -143,12 +144,11 @@ const CardForm = (props) => {
         <div className="inputBox" onClick={flipFront}>
           <select
             name="Year"
-            id=""
             className="year-input"
             value={expireYear}
             onChange={handleExpYear}
           >
-            <option value="year" selected defaultChecked>
+            <option value="year">
               Year
             </option>
             <option value="2021">2021</option>
@@ -168,6 +168,7 @@ const CardForm = (props) => {
           <span>cvv</span>
 
           <input
+            data-testid="cvv"
             required
             type="text"
             maxLength="4"

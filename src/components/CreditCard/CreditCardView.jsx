@@ -20,14 +20,14 @@ const CreditCardView = (props) => {
             <img src="img/logos/chip.png" alt="" />
             <img src={cardTypeUrl} alt="" />
           </div>
-          <div className="card-number-box">
+          <div data-testid="cardNum" className="card-number-box">
             {creditCardNum ? creditCardNum : "#### #### #### ####"}
           </div>
 
           <div className="flexbox">
             <div className="card-holder">
-              <h5 className="card-title">Card Holder</h5>
-              <h3 className="card-content">
+              <h5  className="card-title">Card Holder</h5>
+              <h3 data-testid="cardName" className="card-content">
                 {" "}
                 {cardHolder ? cardHolder : "AD SOYAD"}{" "}
               </h3>
@@ -49,7 +49,7 @@ const CreditCardView = (props) => {
           <div className="stripe" />
           <div className="box ">
             <span>cvv</span>
-            <div className="cvv-box"> {cvv}</div>
+            <div data-testid="Cardcvv" className="cvv-box">{cvv}</div>
             <img src={cardTypeUrl} alt="" />
           </div>
         </div>
