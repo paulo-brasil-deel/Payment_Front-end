@@ -3,15 +3,16 @@ import "./App.css";
 import CreditCardView from "./components/CreditCard/CreditCardView";
 import CardForm from "./components/CardForm/CardForm";
 import CardInfoProvider from "./components/Context/CardInfoContext";
+import Layout from "./components/Layout"
 
 function App() {
   return (
-    <CardInfoProvider>
-      <div className="container">
+    <Layout>
+      <CardInfoProvider>
         <CreditCardView />
         <CardForm />
-      </div>
-    </CardInfoProvider>
+      </CardInfoProvider>
+    </Layout>
   );
 }
 
